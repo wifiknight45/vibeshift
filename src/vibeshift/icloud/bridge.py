@@ -1,14 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from vibeshift.icloud.musickit import get_apple_music_client
 
 
-@dataclass
-class ICloudBridge:
-    """Placeholder for Apple Music library import / playlist export."""
-
-    def status(self) -> str:
-        return (
-            "scaffold: use Apple MusicKit for catalog/playlists; "
-            "optional CSV/XML library export as an offline import path"
-        )
+def status() -> dict:
+    return get_apple_music_client().status()

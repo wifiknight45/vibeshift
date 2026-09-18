@@ -29,6 +29,19 @@ src/vibeshift/
   playlist/    # playlist build / merge / export
 ```
 
+## Connect accounts
+
+```bash
+# Spotify
+cp .env.example .env   # fill SPOTIFY_* 
+vibeshift spotify login
+vibeshift spotify me
+
+# Apple Music (MusicKit — needs Apple Developer key + Music User Token)
+# see docs/APPLE_MUSIC.md and docs/SPOTIFY.md
+vibeshift apple status
+```
+
 ## Privacy
 
 Tokens stay in local env / encrypted at rest. Never commit `.env`.
