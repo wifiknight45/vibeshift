@@ -1,3 +1,13 @@
+[![License](https://img.shields.io/github/license/wifiknight45/vibeshift)](https://github.com/wifiknight45/vibeshift)
+[![GitHub stars](https://img.shields.io/github/stars/wifiknight45/vibeshift?style=social)](https://github.com/wifiknight45/vibeshift/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/wifiknight45/vibeshift)](https://github.com/wifiknight45/vibeshift/commits)
+[![Top language](https://img.shields.io/github/languages/top/wifiknight45/vibeshift)](https://github.com/wifiknight45/vibeshift)
+[![Issues](https://img.shields.io/github/issues/wifiknight45/vibeshift)](https://github.com/wifiknight45/vibeshift/issues)
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Spotify](https://img.shields.io/badge/Spotify-OAuth-1DB954.svg)](https://developer.spotify.com/)
+[![Apple Music](https://img.shields.io/badge/Apple%20Music-MusicKit-black.svg)](https://developer.apple.com/musickit/)
+[![Perplexity](https://img.shields.io/badge/Perplexity-Sonar%20API-7C3AED.svg)](https://docs.perplexity.ai/)
+
 # vibeshift
 
 Python toolkit that connects **iCloud** and **Spotify** to:
