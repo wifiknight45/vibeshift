@@ -1,6 +1,10 @@
 from __future__ import annotations
 
-# Lightweight adjacency map for offline demos; replace/enrich with Spotify related-artists later.
+import logging
+
+logger = logging.getLogger(__name__)
+
+# Lightweight adjacency map for offline demos; enrich with Perplexity / Spotify later.
 _GRAPH: dict[str, list[str]] = {
     "indie pop": ["dream pop", "synth pop", "bedroom pop", "art pop", "jangle pop"],
     "house": ["deep house", "tech house", "disco", "garage", "ambient house"],
@@ -10,12 +14,23 @@ _GRAPH: dict[str, list[str]] = {
 }
 
 
-def suggest_adjacent(seed: str, limit: int = 8) -> list[str]:
+def suggest_adjacent(seed: str, limit: int = 8, use_perplexity: bool = True) -> list[str]:
+    """Suggest adjacent genres/artists. Tries Perplexity API when configured."""
+    if use_perplexity:
+        try:
+            from vibeshift.discovery import perplexity as pplx
+
+            if pplx.configured():
+                ideas = pplx.research_adjacent(seed, limit=limit)
+                if ideas:
+                    return ideas
+        except Exception as exc:  # noqa: BLE001 — soft fallback
+            logger.warning("Perplexity research failed, using heuristic: %s", exc)
+
     key = seed.strip().lower()
     base = _GRAPH.get(key)
     if base:
         return base[:limit]
-    # Unknown seed: invent gentle adjacency labels for scaffolding
     return [
         f"{seed} × lo-fi",
         f"ambient {seed}",

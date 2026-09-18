@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     spotify_client_secret: str | None = None
     spotify_redirect_uri: str = "http://127.0.0.1:8080/callback"
     vibeshift_log_level: str = "INFO"
+    perplexity_api_key: str | None = None
+    perplexity_model: str = "sonar"
 
 
 def get_settings() -> Settings:

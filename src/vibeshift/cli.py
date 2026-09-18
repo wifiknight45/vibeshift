@@ -19,9 +19,10 @@ def version() -> None:
 def suggest(
     seed: str = typer.Argument(..., help="Seed genre or artist, e.g. 'indie pop'"),
     limit: int = typer.Option(8, help="How many adjacent ideas to return"),
+    offline: bool = typer.Option(False, help="Skip Perplexity; use local heuristics only"),
 ) -> None:
     """Suggest adjacent genres/artists (heuristic scaffold; Spotify enrich later)."""
-    ideas = suggest_adjacent(seed, limit=limit)
+    ideas = suggest_adjacent(seed, limit=limit, use_perplexity=not offline)
     for i, idea in enumerate(ideas, 1):
         print(f"[cyan]{i}.[/cyan] {idea}")
 

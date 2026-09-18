@@ -15,3 +15,10 @@
 2. Related-artists enrichment for `suggest_adjacent`
 3. Apple MusicKit library read (optional)
 4. CLI `vibeshift sync` dry-run → apply
+
+
+## Perplexity research
+- Use the **official Perplexity API** (`sonar` / Sonar models) for web-grounded adjacent genre & artist research.
+- Do **not** scrape perplexity.com HTML — against ToS and fragile.
+- Set `PERPLEXITY_API_KEY`; discovery falls back to local heuristics when unset or on API errors.
+- CLI: `vibeshift suggest "indie pop"` (API if keyed) or `vibeshift suggest "indie pop" --offline`.
